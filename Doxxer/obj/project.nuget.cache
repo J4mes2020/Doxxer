@@ -1,0 +1,37 @@
+{
+  "version": 2,
+  "dgSpecHash": "8s6XaiSbuorgcYhhyj+wQ1iqwrpn6w5aUaOWHklmHWFTmwtoRA7kK3gXnRQMNVMG3r32no6naLTVlIHTV/FVRA==",
+  "success": true,
+  "projectFilePath": "E:\\Users\\james\\Desktop\\Coding\\C\\Doxxer\\Doxxer\\Doxxer.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\james\\.nuget\\packages\\microsoft.win32.systemevents\\8.0.0-preview.1.23110.8\\microsoft.win32.systemevents.8.0.0-preview.1.23110.8.nupkg.sha512",
+    "C:\\Users\\james\\.nuget\\packages\\simplewifi\\1.0.0\\simplewifi.1.0.0.nupkg.sha512",
+    "C:\\Users\\james\\.nuget\\packages\\system.configuration.configurationmanager\\8.0.0-preview.1.23110.8\\system.configuration.configurationmanager.8.0.0-preview.1.23110.8.nupkg.sha512",
+    "C:\\Users\\james\\.nuget\\packages\\system.directoryservices\\8.0.0-preview.1.23110.8\\system.directoryservices.8.0.0-preview.1.23110.8.nupkg.sha512",
+    "C:\\Users\\james\\.nuget\\packages\\system.directoryservices.accountmanagement\\8.0.0-preview.1.23110.8\\system.directoryservices.accountmanagement.8.0.0-preview.1.23110.8.nupkg.sha512",
+    "C:\\Users\\james\\.nuget\\packages\\system.directoryservices.protocols\\8.0.0-preview.1.23110.8\\system.directoryservices.protocols.8.0.0-preview.1.23110.8.nupkg.sha512",
+    "C:\\Users\\james\\.nuget\\packages\\system.drawing.common\\8.0.0-preview.1.23110.8\\system.drawing.common.8.0.0-preview.1.23110.8.nupkg.sha512",
+    "C:\\Users\\james\\.nuget\\packages\\system.security.cryptography.protecteddata\\8.0.0-preview.1.23110.8\\system.security.cryptography.protecteddata.8.0.0-preview.1.23110.8.nupkg.sha512",
+    "C:\\Users\\james\\.nuget\\packages\\system.security.permissions\\8.0.0-preview.1.23110.8\\system.security.permissions.8.0.0-preview.1.23110.8.nupkg.sha512",
+    "C:\\Users\\james\\.nuget\\packages\\system.windows.extensions\\8.0.0-preview.1.23110.8\\system.windows.extensions.8.0.0-preview.1.23110.8.nupkg.sha512",
+    "C:\\Users\\james\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.14\\microsoft.netcore.app.ref.6.0.14.nupkg.sha512",
+    "C:\\Users\\james\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\6.0.14\\microsoft.netcore.app.runtime.win-x64.6.0.14.nupkg.sha512",
+    "C:\\Users\\james\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.14\\microsoft.windowsdesktop.app.ref.6.0.14.nupkg.sha512",
+    "C:\\Users\\james\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\6.0.14\\microsoft.windowsdesktop.app.runtime.win-x64.6.0.14.nupkg.sha512",
+    "C:\\Users\\james\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.14\\microsoft.aspnetcore.app.ref.6.0.14.nupkg.sha512",
+    "C:\\Users\\james\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\6.0.14\\microsoft.aspnetcore.app.runtime.win-x64.6.0.14.nupkg.sha512",
+    "C:\\Users\\james\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.14\\microsoft.netcore.app.host.win-x64.6.0.14.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'SimpleWifi 1.0.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0-windows7.0'. This package may not be fully compatible with your project.",
+      "libraryId": "SimpleWifi",
+      "targetGraphs": [
+        "net6.0-windows7.0"
+      ]
+    }
+  ]
+}

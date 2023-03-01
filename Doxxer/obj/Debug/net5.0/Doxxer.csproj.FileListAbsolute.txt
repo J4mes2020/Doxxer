@@ -1,0 +1,16 @@
+E:\Users\james\Desktop\Coding\C\Doxxer\Doxxer\bin\Debug\net5.0\Doxxer.exe
+E:\Users\james\Desktop\Coding\C\Doxxer\Doxxer\bin\Debug\net5.0\Doxxer.deps.json
+E:\Users\james\Desktop\Coding\C\Doxxer\Doxxer\bin\Debug\net5.0\Doxxer.runtimeconfig.json
+E:\Users\james\Desktop\Coding\C\Doxxer\Doxxer\bin\Debug\net5.0\Doxxer.runtimeconfig.dev.json
+E:\Users\james\Desktop\Coding\C\Doxxer\Doxxer\bin\Debug\net5.0\Doxxer.dll
+E:\Users\james\Desktop\Coding\C\Doxxer\Doxxer\bin\Debug\net5.0\ref\Doxxer.dll
+E:\Users\james\Desktop\Coding\C\Doxxer\Doxxer\bin\Debug\net5.0\Doxxer.pdb
+E:\Users\james\Desktop\Coding\C\Doxxer\Doxxer\obj\Debug\net5.0\Doxxer.csproj.AssemblyReference.cache
+E:\Users\james\Desktop\Coding\C\Doxxer\Doxxer\obj\Debug\net5.0\Doxxer.GeneratedMSBuildEditorConfig.editorconfig
+E:\Users\james\Desktop\Coding\C\Doxxer\Doxxer\obj\Debug\net5.0\Doxxer.AssemblyInfoInputs.cache
+E:\Users\james\Desktop\Coding\C\Doxxer\Doxxer\obj\Debug\net5.0\Doxxer.AssemblyInfo.cs
+E:\Users\james\Desktop\Coding\C\Doxxer\Doxxer\obj\Debug\net5.0\Doxxer.csproj.CoreCompileInputs.cache
+E:\Users\james\Desktop\Coding\C\Doxxer\Doxxer\obj\Debug\net5.0\Doxxer.dll
+E:\Users\james\Desktop\Coding\C\Doxxer\Doxxer\obj\Debug\net5.0\ref\Doxxer.dll
+E:\Users\james\Desktop\Coding\C\Doxxer\Doxxer\obj\Debug\net5.0\Doxxer.pdb
+E:\Users\james\Desktop\Coding\C\Doxxer\Doxxer\obj\Debug\net5.0\Doxxer.genruntimeconfig.cache
