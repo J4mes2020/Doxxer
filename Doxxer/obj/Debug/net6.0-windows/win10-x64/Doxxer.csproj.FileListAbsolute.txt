@@ -246,3 +246,15 @@ E:\Users\james\Desktop\Coding\C\Doxxer\Doxxer\obj\Debug\net6.0-windows\win10-x64
 E:\Users\james\Desktop\Coding\C\Doxxer\Doxxer\obj\Debug\net6.0-windows\win10-x64\Doxxer.pdb
 E:\Users\james\Desktop\Coding\C\Doxxer\Doxxer\obj\Debug\net6.0-windows\win10-x64\Doxxer.genruntimeconfig.cache
 E:\Users\james\Desktop\Coding\C\Doxxer\Doxxer\obj\Debug\net6.0-windows\win10-x64\ref\Doxxer.dll
+E:\Users\james\Desktop\Coding\C\Doxxer\Doxxer\bin\Debug\net6.0-windows\win10-x64\Emgu.CV.dll
+E:\Users\james\Desktop\Coding\C\Doxxer\Doxxer\bin\Debug\net6.0-windows\win10-x64\Emgu.CV.Bitmap.dll
+E:\Users\james\Desktop\Coding\C\Doxxer\Doxxer\bin\Debug\net6.0-windows\win10-x64\cvextern.dll
+E:\Users\james\Desktop\Coding\C\Doxxer\Doxxer\bin\Debug\net6.0-windows\win10-x64\opencv_videoio_ffmpeg460_64.dll
+E:\Users\james\Desktop\Coding\C\Doxxer\Doxxer\bin\Debug\net6.0-windows\win10-x64\concrt140.dll
+E:\Users\james\Desktop\Coding\C\Doxxer\Doxxer\bin\Debug\net6.0-windows\win10-x64\msvcp140.dll
+E:\Users\james\Desktop\Coding\C\Doxxer\Doxxer\bin\Debug\net6.0-windows\win10-x64\msvcp140_1.dll
+E:\Users\james\Desktop\Coding\C\Doxxer\Doxxer\bin\Debug\net6.0-windows\win10-x64\msvcp140_2.dll
+E:\Users\james\Desktop\Coding\C\Doxxer\Doxxer\bin\Debug\net6.0-windows\win10-x64\msvcp140_atomic_wait.dll
+E:\Users\james\Desktop\Coding\C\Doxxer\Doxxer\bin\Debug\net6.0-windows\win10-x64\msvcp140_codecvt_ids.dll
+E:\Users\james\Desktop\Coding\C\Doxxer\Doxxer\bin\Debug\net6.0-windows\win10-x64\vcruntime140.dll
+E:\Users\james\Desktop\Coding\C\Doxxer\Doxxer\bin\Debug\net6.0-windows\win10-x64\vcruntime140_1.dll

