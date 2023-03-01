@@ -10,7 +10,10 @@
       <PackageReference Include="Emgu.CV" Version="4.6.0.5131" />
       <PackageReference Include="Emgu.CV.Bitmap" Version="4.6.0.5131" />
       <PackageReference Include="Emgu.CV.runtime.windows" Version="4.6.0.5131" />
+      <PackageReference Include="kyub.org.bouncycastle.dtlssrtp" Version="1.0.1" />
+      <PackageReference Include="Newtonsoft.Json" Version="13.0.3-beta1" />
       <PackageReference Include="SimpleWifi" Version="1.0.0" />
+      <PackageReference Include="System.Data.SQLite" Version="1.0.117" />
       <PackageReference Include="System.DirectoryServices.AccountManagement" Version="8.0.0-preview.1.23110.8" />
     </ItemGroup>
 
